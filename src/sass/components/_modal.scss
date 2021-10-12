@@ -1,0 +1,319 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-mobile-menu);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+    height: 600px;
+    top: 10%;
+    left: 6%;
+    transform: translate(6%, 0%);
+  }
+
+  @media screen and (min-width: 1366px) {
+    height: 650px;
+    top: 10%;
+    left: 20%;
+    transform: translate(20%, 0%);
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-height: 609px;
+  min-width: 320px;
+
+  border-radius: 1px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 528px;
+    min-height: 581px;
+  }
+}
+
+.modal__svg {
+  width: 11px;
+  height: 11px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--all-white-color);
+
+  .modal__button:hover &,
+  .modal__button:focus & {
+    fill: var(--all-orange-color);
+  }
+}
+
+.modal__button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--background-mobile-menu);
+  border-radius: 50%;
+  border: 1px solid var(--all-orange-color);
+  padding: 0;
+  cursor: pointer;
+
+  @media (min-width: 768px) and (max-width: 1365px) {
+    right: 18px;
+    top: 30px;
+  }
+  @media screen and (min-width: 1366px) {
+    right: 18px;
+    top: 0px;
+  }
+}
+.modal-contacts__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+
+  color: var(--all-white-color);
+
+  padding: 40px 40px 0 40px;
+  margin-bottom: 12px;
+  margin-top: 0;
+
+  @media (min-width: 768px) and (max-width: 1365px) {
+    line-height: 1.17;
+
+    text-align: center;
+    margin-left: 65px;
+    width: 340px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    margin-left: 65px;
+    width: 340px;
+  }
+}
+.modal-contacts__form {
+  width: 280px;
+  height: 609px;
+  margin-left: 20px;
+
+  @media screen and (min-width: 768px) {
+    // width: 528px;
+    min-height: 581px;
+    // margin-left: 75px;
+  }
+}
+.modal-contacts__label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.16;
+  color: var(--all-white-color);
+
+  margin: 5px 0 10px 0;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    margin-left: 20px;
+  }
+}
+.modal-contacts__name {
+  position: relative;
+  display: block;
+}
+.modal-contacts__phone {
+  position: relative;
+  display: block;
+}
+.modal-contacts__mail {
+  position: relative;
+  display: block;
+}
+.modal-contacts__input {
+  width: 280px;
+  height: 40px;
+  margin: 4px 0 0 0;
+  padding: 0 0 0 42px;
+
+  border-radius: 4px;
+  border: 1px solid var(--all-white-color);
+  background-color: var(--background-mobile-menu);
+  color: var(--all-white-color);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border-color: var(--all-orange-color);
+    outline: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 448px;
+  }
+}
+.modal-contacts__icon-name {
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  bottom: 14px;
+  left: 15px;
+
+  fill: var(--all-orange-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-contacts__icon-phone {
+  position: absolute;
+  display: block;
+  width: 13px;
+  height: 13px;
+  bottom: 13px;
+  left: 14px;
+
+  fill: var(--all-orange-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-contacts__icon-mail {
+  position: absolute;
+  display: block;
+  width: 13px;
+  height: 13px;
+  bottom: 13px;
+  left: 14px;
+
+  fill: var(--all-orange-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-contacts__icon-checkbox {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+
+  width: 16px;
+  height: 15px;
+  transform: translateX(-145%);
+  top: 0px;
+  fill: var(--all-orange-color);
+
+  .checkbox:checked + & {
+    display: block;
+    content: '';
+    width: 16x;
+    height: 15px;
+    background-image: url(../images/svg/check.svg);
+    fill: var(--all-orange-color);
+    background-color: var(--all-orange-color);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media screen and (min-width: 1200px) {
+    top: 5px;
+  }
+}
+
+.modal-contacts__textarea {
+  width: 280px;
+  height: 120px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--all-white-color);
+  resize: none;
+  padding-left: 16px;
+  padding-top: 12px;
+
+  background-color: var(--background-mobile-menu);
+  color: var(--all-white-color);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border-color: var(--all-orange-color);
+    outline: none;
+  }
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    color: var(--all-white-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 448px;
+  }
+}
+
+.modal-contacts__button {
+  font-size: 16px;
+  line-height: 1.87;
+  font-weight: 500;
+  width: 200px;
+
+  background-color: var(--all-orange-color);
+  color: var(--all-white-color);
+  border-color: var(--all-orange-color);
+  border-radius: 4px;
+  cursor: pointer;
+
+  padding: 10px 55px 10px 56px;
+  margin: 0 25px 40px 35px;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 163px 40px 135px;
+  }
+}
+.modal-contacts__span {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  line-height: 1.16;
+  color: var(--all-white-color);
+  margin: 0 40px 31px 64px;
+  letter-spacing: 0.03em;
+
+  @media screen and (min-width: 768px) {
+    width: 390px;
+    margin-left: 55px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    font-size: 14px;
+    line-height: 1.71;
+    margin: 0 51px 30px 40px;
+    letter-spacing: normal;
+    width: 450px;
+  }
+}
+.modal-contacts__link {
+  color: var(--all-orange-color);
+  font-size: 12px;
+  line-height: 1.16;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}

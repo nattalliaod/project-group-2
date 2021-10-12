@@ -1,0 +1,48 @@
+<!-- modal -->
+
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+        <button data-modal-close class="modal__button">
+            <svg class="modal__svg">
+                <use href="./images/svg/sprite.svg#icon-close"></use>
+            </svg>
+        </button>
+        <form action="#" method="GET" class="modal-contacts__form">
+            <p class="modal-contacts__title">Leave your details, we will call you back</p>
+            <label class="modal-contacts__label">Name
+                <span class="modal-contacts__name">
+                    <input type="text" name="user-name" class="modal-contacts__input" required>
+                    <svg class="modal-contacts__icon-name">
+                        <use href="./images/svg/sprite.svg#icon-name"></use>
+                    </svg>
+                </span>
+            </label>
+            <label class="modal-contacts__label">Phone
+                <span class="modal-contacts__phone">
+                    <input type="tel" name="user-phone" class="modal-contacts__input" required
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" title="096-111-11-11">
+                    <svg class="modal-contacts__icon-phone">
+                        <use href="./images/svg/sprite.svg#icon-phone"></use>
+                    </svg>
+                </span>
+            </label>
+            <label class="modal-contacts__label">Email
+                <span class="modal-contacts__mail">
+                    <input type="email" name="user-email" class="modal-contacts__input" required>
+                    <svg class="modal-contacts__icon-mail">
+                        <use href="./images/svg/sprite.svg#icon-mail"></use>
+                    </svg>
+                </span>
+            </label>
+            <label class="modal-contacts__label">Comments<textarea name="user-message" cols="30" rows="10" placeholder="Enter text"
+                    class="modal-contacts__textarea"></textarea></label>
+            <label for="checkbox-policy" class="modal-contacts__span">
+                <input type="checkbox" class="checkbox visually-hidden" id="checkbox-policy" required>
+                <svg class="modal-contacts__icon-checkbox">
+                    <use href="./images/svg/sprite.svg#icon-checkbox"></use>
+                </svg>I agree with the terms and conditions and  
+                <a href="" class="modal-contacts__link">the privacy policy</a></label>
+            <button type="submit" class="modal-contacts__button">Send</button>
+        </form>
+    </div>
+</div>

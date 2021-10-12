@@ -1,0 +1,142 @@
+// .problems {
+//   background-image: linear-gradient(
+//     to bottom,
+//     $problems_background-primary,
+//     $problems_background-white
+//   );
+// }
+
+.problems {
+  background-color: var(--primary-text-color);
+  padding-top: 28px;
+  // padding-left: 20px;
+  // padding-right: 20px;
+
+  min-height: 546px;
+  margin-bottom: 220px;
+}
+
+.problems__title {
+  text-align: left;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.3;
+
+  letter-spacing: 0.03em;
+  color: var(--all-white-color);
+}
+
+.problems__title-accent {
+  color: var(--all-orange-color);
+}
+
+.problems__container {
+  position: relative;
+}
+
+.problems__position {
+  position: absolute;
+  padding: 34px 22px 34px 44px;
+
+  top: 120%;
+  min-width: 280px;
+
+  background-color: var(--all-white-color);
+  box-shadow: -5px 8px 26px var(--box-shadow-color);
+}
+
+.problems__item {
+  text-align: left;
+  width: 207px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 2;
+
+  letter-spacing: 0.08em;
+}
+
+.problems__list {
+  counter-reset: problems__list;
+}
+
+.problems__item::before {
+  display: flex;
+  counter-increment: problems__list 01;
+
+  content: '\268A  0'counter(problems__list);
+  color: var(--all-orange-color);
+}
+
+@media screen and (max-width: 767px) {
+  .problems__position {
+    left: 15px;
+    right: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .problems {
+    padding-top: 60px;
+    // padding-left: 42px;
+    min-height: 340px;
+    margin-bottom: 200px;
+  }
+
+  .problems__position {
+    min-width: 688px;
+    padding: 28px 96px;
+    min-width: 688px;
+    // right: 40px;
+    // left: 40px;
+  }
+
+  .problems__item {
+    width: 236px;
+  }
+
+  .problems__list {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2vw;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .problems {
+    // max-width: 1680px;
+    min-height: 560px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    background-image: url('../images/svg/problems-fire.svg');
+    background-repeat: no-repeat;
+    background-size: 455px 472px;
+    background-position: right bottom;
+
+    // overflow-x: hidden;
+    padding-top: 60px;
+    margin-bottom: 280px;
+  }
+
+  .problems__title {
+    font-size: 46px;
+  }
+
+  .problems__position {
+    top: 150%;
+    min-width: 1314px;
+    padding: 65px 114px;
+
+    min-height: 362px;
+  }
+
+  .problems__item {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .problems__list {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
